@@ -1,0 +1,130 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/cpp
+{
+	"name": "C++",
+	// "build": {
+	// 	"dockerfile": "Dockerfile",
+	// 	// Update 'VARIANT' to pick an Debian / Ubuntu OS version: debian-11, debian-10, debian-9, ubuntu-21.04, ubuntu-20.04, ubuntu-18.04
+	// 	// Use Debian 11, Debian 9, Ubuntu 18.04 or Ubuntu 21.04 on local arm64/Apple Silicon
+	// 	"args": { "VARIANT": "ubuntu-20.04" }
+	// },
+	"dockerComposeFile": [
+		"docker-compose.yml",
+	],
+
+	"service": "stock",
+	"workspaceFolder": "/home/user/stock_study",
+
+	// "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+
+	// Set *default* container specific settings.json values on container create.
+	
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-vscode.cpptools",
+		"ms-vscode.cmake-tools",
+		"twxs.cmake",
+		"ms-vscode.cpptools-extension-pack",
+		"ms-vscode.cpptools-themes",
+		"alefragnani.bookmarks",
+		"ms-vscode-remote.remote-containers",
+		"ms-vscode-remote.remote-ssh",
+		"ms-vscode-remote.remote-ssh-edit",
+		"ms-vscode-remote.remote-wsl",
+		"austin.code-gnu-global",
+		"aaron-bond.better-comments"
+	],
+	
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
+	
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode",
+	"features": {
+		// "github-cli": "latest"
+	},
+	"settings": {
+		"editor.bracketPairColorization.enabled": true,
+		"editor.guides.bracketPairs": true,
+		"editor.guides.bracketPairsHorizontal": false,
+		"editor.guides.highlightActiveBracketPair": true,
+		"editor.tokenColorCustomizations": {
+			"comments": "#25af43"
+			// "#25af43"
+		},
+		"workbench.colorCustomizations": {
+			"editor.findMatchBackground": "#5d8841",
+			"editor.findMatchBorder": "#bdbd32",
+			"editor.selectionBackground": "#684c75",
+			"editor.findMatchHighlightBackground": "#8d0707",
+			"tab.activeBackground": "#5c4091",
+			"editor.hoverHighlightBackground": "#4e5f5a",
+			"editor.selectionHighlightBackground": "#907f4c",
+			"editorCursor.foreground": "#c291b4",
+			"terminalCursor.foreground": "#72b9fb",
+		
+		},
+		"better-comments.tags": [
+			{
+			"tag": "*",
+			"color": "#ff52b7",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": true,
+			"italic": false
+			},    
+			{
+			"tag": "n*",
+			"color": "#c370a1",
+			"strikethrough": false,
+			"underline": true,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+			}
+		],
+		"liveshare.presence": true,
+		// "editor.tabCompletion": "on",
+		// "editor.snippetSuggestions": "top",
+		"workbench.settings.editor": "ui",
+		"python.defaultInterpreterPath": "/usr/bin/python3",
+		"python.autoComplete.extraPaths": [
+			"${workspaceFolder}/customModule"
+			],
+		"explorer.autoReveal": false,
+		"terminal.integrated.inheritEnv": false,
+		"workbench.editorAssociations": {
+			"*.ipynb": "jupyter-notebook"
+		},
+		"editor.fontLigatures": false,
+		"C_Cpp.addNodeAddonIncludePaths": true,
+		"sync.gist": "340be208f14956e966828474d2fa37fc",
+		"cmake.buildDirectory": "${workspaceFolder}/build",
+		"cmake.sourceDirectory": "${workspaceFolder}",
+		"extensions.ignoreRecommendations": true,
+		// "C_Cpp.intelliSenseEngineFallback": "Enabled",
+		// "cmake.configureOnOpen": false,
+		// "C_Cpp.dimInactiveRegions": false,
+		"cmake.loggingLevel": "debug",
+		"cmake.debugConfig": {
+			"externalConsole": false,
+			"console" : "integratedTerminal",
+			// "miDebuggerArgs": "-q -ex quit; wait() { fg >/dev/null; }; /bin/gdb -q --interpreter=mi"
+			},
+		"git.autofetch": true,
+		"workbench.editor.splitInGroupLayout": "vertical",
+		"terminal.integrated.defaultProfile.windows": "Command Prompt",
+		"C_Cpp.updateChannel": "Insiders",
+		"cmake.configureOnOpen": false,
+		"C_Cpp.enhancedColorization": "Disabled",
+		"editor.occurrencesHighlight": false,
+		"search.useIgnoreFiles": false,
+		"cmake.configureOnEdit": false, 
+		"C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+		"C_Cpp.default.compilerPath": "/usr/bin/gcc"
+	},
+}

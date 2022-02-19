@@ -1,0 +1,41 @@
+# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/cpp/.devcontainer/base.Dockerfile
+
+# [Choice] Debian / Ubuntu version (use Debian 11/9, Ubuntu 18.04/21.04 on local arm64/Apple Silicon): debian-11, debian-10, debian-9, ubuntu-21.04, ubuntu-20.04, ubuntu-18.04
+ARG VARIANT="bullseye"
+FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
+
+# [Optional] Uncomment this section to install additional packages.
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
+# RUN cp ~/.ssh/git_ssh /tmp/
+
+
+RUN apt-get update && apt-get -y install htop
+
+# ARG USER_ID="1331"
+# ARG GROUP_ID="1331"
+# ARG USER_NAME="user"
+
+# RUN groupadd -g "${GROUP_ID}" "${USER_NAME}" && \
+#   useradd -l -u "${USER_ID}" -m "${USER_NAME}" -g "${USER_NAME}"
+# RUN chown -R "${USER_NAME}":"${USER_NAME}" /home/"${USER_NAME}"
+# RUN chmod 755 /home/"${USER_NAME}"
+# # RUN useradd -u $USER_ID -o -m $USER_NAME
+# # RUN groupmod -g $GROUP_ID $USER_NAME
+# ENV HOME=/home/$USER_NAME
+# RUN userdel vscode
+
+RUN usermod -l keisuke vscode
+RUN groupmod -n keisuke vscode
+RUN echo "root:root" | chpasswd
+RUN echo "keisuke:keisuke" | chpasswd
+#add sudoers
+RUN usermod -aG sudo keisuke 
+RUN usermod -u 1001 keisuke
+RUN groupmod -g 1001 keisuke
+
+
+# RUN chown -R keisuke:keisuke /root/.ssh
+
+USER keisuke
+WORKDIR /home/$USERNAME/

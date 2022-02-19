@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  stock:
+    image: cpp
+    container_name: stock_study
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        VARIANT: ubuntu-20.04
+    volumes:
+      - ../:/home/user/stock_study:delegated
+      - type: bind
+        source: ~/.ssh
+        target: /home/user/.ssh
+        read_only: true
+      - type: bind
+        source: ~/.gitconfig
+        target: /etc/gitconfig
+        read_only: true
+    ports:
+      - "8887:8888"
+    # cap_add: 
+    #   - SYS_PTRACE
+    privileged: true
+    security_opt: 
+      - seccomp:unconfined
+    stdin_open: true
+    tty: true
+    working_dir: /home/user/stock_study
