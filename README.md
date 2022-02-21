@@ -43,7 +43,7 @@
 
 - ### Datasets
   - Website
-    - [Quandl](https://data.nasdaq.com/) (need to generate api-key)
+    - [Quandl](https://data.nasdaq.com/) (about [API](https://data.nasdaq.com/tools/api))
 
 
 - ### Helpful Recourses
