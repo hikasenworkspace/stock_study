@@ -41,6 +41,10 @@
     - 書籍  
       - [Advances in Financial Machine Learning (AFML)](https://www.oreilly.com/library/view/advances-in-financial/9781119482086/)
 
+- ### Datasets
+  - Website
+    - [Quandl](https://data.nasdaq.com/) (need to generate api-key)
+
 
 - ### Helpful Recourses
   - [Git Workflow](https://nvie.com/posts/a-successful-git-branching-model/)
