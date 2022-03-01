@@ -6,6 +6,9 @@
 
 `export STORE_DIRECTORY=<your desired path>`
 
+- For example, `/home/user/stock_study/binance-public-data`
+
+
 This will configure the default storing directory of the downloaded data. This can be 
 overwritten <br/> by setting an argument(example given below). 
 

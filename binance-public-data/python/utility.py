@@ -5,6 +5,8 @@ from datetime import *
 import urllib.request
 from argparse import ArgumentParser, RawTextHelpFormatter, ArgumentTypeError
 from enums import *
+from zipfile import ZipFile
+from pathlib import Path
 
 def get_destination_dir(file_url, folder=None):
   store_directory = os.environ.get('STORE_DIRECTORY')
@@ -26,7 +28,7 @@ def get_all_symbols(type):
     response = urllib.request.urlopen("https://api.binance.com/api/v3/exchangeInfo").read()
   return list(map(lambda symbol: symbol['symbol'], json.loads(response)['symbols']))
 
-def download_file(base_path, file_name, date_range=None, folder=None):
+def download_file(base_path, file_name, date_range=None, folder=None, extract = False):
   download_path = "{}{}".format(base_path, file_name)
   if folder:
     base_path = os.path.join(folder, base_path)
@@ -38,6 +40,8 @@ def download_file(base_path, file_name, date_range=None, folder=None):
 
   if os.path.exists(save_path):
     print("\nfile already exists! {}".format(save_path))
+    if extract:
+       unzip(save_path)
     return
   
   # make the directory
@@ -69,6 +73,9 @@ def download_file(base_path, file_name, date_range=None, folder=None):
     print("\nFile not found: {}".format(download_url))
     pass
 
+  if extract:
+    unzip(save_path)
+
 def convert_to_date_object(d):
   year, month, day = [int(x) for x in d.split('-')]
   date_obj = date(year, month, day)
@@ -98,6 +105,11 @@ def check_directory(arg_value):
       else:
         break
   return arg_value
+
+def unzip(filename):
+  path = Path(filename)
+  with ZipFile(filename, 'r') as zipObj:
+    zipObj.extractall(path.parent.absolute())
 
 def get_path(trading_type, market_data_type, time_period, symbol, interval=None):
   trading_type_path = 'data/spot'
@@ -138,11 +150,16 @@ def get_parser(parser_type):
   parser.add_argument(
       '-t', dest='type', default='spot', choices=TRADING_TYPE,
       help='Valid trading types: {}'.format(TRADING_TYPE))
+  parser.add_argument(
+      '-z', dest='extract', default=False, choices=EXTRACT, type=bool,
+      help='True of False')
 
   if parser_type == 'klines':
     parser.add_argument(
       '-i', dest='intervals', default=INTERVALS, nargs='+', choices=INTERVALS,
       help='single kline interval or multiple intervals separated by space\n-i 1m 1w means to download klines interval of 1minute and 1week')
+
+
 
 
   return parser

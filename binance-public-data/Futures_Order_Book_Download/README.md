@@ -1,3 +1,5 @@
+# 0 API-key is needed for this functions.
+
 # 1 Futures Orderbook Download
 
 This document describes how to download the futures orderbook level 2 data via API.
