@@ -49,3 +49,10 @@
 
 - ### Helpful Recourses
   - [Git Workflow](https://nvie.com/posts/a-successful-git-branching-model/)
+
+
+## Terminologies
+  - ### makimaki
+    - CAPM
+    - Black-Scholes
+    - binomial tree pricing

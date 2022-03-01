@@ -32,7 +32,12 @@
 		"ms-vscode-remote.remote-ssh-edit",
 		"ms-vscode-remote.remote-wsl",
 		"austin.code-gnu-global",
-		"aaron-bond.better-comments"
+		"aaron-bond.better-comments",
+    "ms-python.python",
+    "xshrim.txt-syntax",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    "bierner.markdown-preview-github-styles"
 	],
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
