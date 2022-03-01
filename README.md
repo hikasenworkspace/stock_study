@@ -25,9 +25,11 @@
       - Approx. スリップ
   - by December
     - つよつよボットの運用開始
-
-- ### Project
-  - #### Algorithmic Trading Bot 
+  
+- ### Pipeline Scheme
+  - Data collection using Binance API
+  - Develop models locally using Binance data
+  - Test models on QuantConnect IDE
 
 - ### Material
   - 金融系の基礎知識を復習/勉強
@@ -44,7 +46,6 @@
 - ### Datasets
   - Website
     - [Quandl](https://data.nasdaq.com/) (about [API](https://data.nasdaq.com/tools/api))
-
 
 - ### Helpful Recourses
   - [Git Workflow](https://nvie.com/posts/a-successful-git-branching-model/)
