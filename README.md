@@ -58,9 +58,3 @@
 ## 議事録
 - [02/19/2022](02192022.md)
 - [02/25/2022](02252022.md)
-
-## Terminologies
-  - ### makimaki
-    - CAPM
-    - Black-Scholes
-    - binomial tree pricing
