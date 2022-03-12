@@ -15,13 +15,14 @@ import requests
 import time
 import hashlib
 import hmac
+from api_key import *
 from urllib.parse import urlencode
 
 S_URL_V1 = "https://api.binance.com/sapi/v1"
 
 # Specify the api_key and secret_key with your API Key and secret_key
-api_key = "your_api_key"
-secret_key = "your_secret_key "
+api_key = apikey
+secret_key = secretkey
 
 # Specify the four input parameters below:
 symbol = "ADAUSDT"  # specify the symbol name
