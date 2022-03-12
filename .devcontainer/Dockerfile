@@ -24,7 +24,6 @@ RUN apt-get update
 
 RUN apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 
-
 WORKDIR /home/user
 USER user
 
