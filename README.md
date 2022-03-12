@@ -9,16 +9,15 @@
 - ### GitHub
   - Link: https://github.com/MKrbm/stock_study
   - 共有内容
-    - 議事録（これ）
+    - 議事録
     - コード
   
 - ### Milestone
   - by April
-    - 雑魚ボットの運用開始
+    - データ収集のパイプライン
+    - よわよわボットの運用開始
       - Market Orderができるくらい
       - 暗号通貨/株のトレード
-  - by May
-    - データ収集のパイプライン
   - by October
     - バックテスト環境
       - 手数料
@@ -50,9 +49,12 @@
 - ### Helpful Recourses
   - [Git Workflow](https://nvie.com/posts/a-successful-git-branching-model/)
 
+## TODO
+- [ ] Binance/Bitflyerの取引用アカウントを作る（スパマキ、ぽんた）
+- [ ] 実際に手動取引して、肌感覚を掴む（スパマキ、ぽんた）
+- [ ] QuantConnect Bootcamp（ラル）
 
-## Terminologies
-  - ### makimaki
-    - CAPM
-    - Black-Scholes
-    - binomial tree pricing
+
+## 議事録
+- [02/19/2022](02192022.md)
+- [02/25/2022](02252022.md)
