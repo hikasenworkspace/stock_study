@@ -52,7 +52,7 @@
 ## TODO
 - [ ] Binance/Bitflyerの取引用アカウントを作る（スパマキ、ぽんた）
 - [ ] 実際に手動取引して、肌感覚を掴む（スパマキ、ぽんた）
-- [ ] QuantConnect Bootcamp（ラル）
+- [ ] Pipeline構築（ラル）
 
 
 ## 議事録
