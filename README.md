@@ -50,8 +50,9 @@
   - [Git Workflow](https://nvie.com/posts/a-successful-git-branching-model/)
 
 ## TODO
-- [ ] Binance/Bitflyerの取引用アカウントを作る（スパマキ、ぽんた）
-- [ ] 実際に手動取引して、肌感覚を掴む（スパマキ、ぽんた）
+- [ ] AFML本読む。VSコードでのローカル環境の構築（スパマキ）
+- [ ] 実際に取引して肌感覚を掴む（スパマキ、ポンタ）
+- [ ] JQuantのチュートリアルの発表（ポンタ）
 - [ ] Pipeline構築（ラル）
 
 
