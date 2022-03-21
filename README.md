@@ -52,9 +52,40 @@
 ## TODO
 - [ ] Binance/Bitflyerの取引用アカウントを作る（スパマキ、ぽんた）
 - [ ] 実際に手動取引して、肌感覚を掴む（スパマキ、ぽんた）
-- [ ] QuantConnect Bootcamp（ラル）
+- [ ] Pipeline構築（ラル）
 
 
 ## 議事録
 - [02/19/2022](02192022.md)
 - [02/25/2022](02252022.md)
+
+
+## environment preparation
+
+### docker
+
+- change directory to `.devcontainer` by
+
+        cd .devcontainer
+
+- compose docker file with 
+
+        docker-compose up -d
+
+- run `docker exec -it <container_name> bash` to enter interactive shell
+
+- `<container_name>` can be checked through `docker ps -n <n>`, where it shows `<n>` last created containers.
+
+### python
+
+- change directory to `.devcontainer` by
+
+        cd .devcontainer
+
+- create conda environment 
+
+        conda env create -f environment.yml -n <env_name>
+
+- activate environment
+
+        conda activate <env_name>
