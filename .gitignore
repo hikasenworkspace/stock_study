@@ -1,3 +1,6 @@
 .corporatenasdaqdatalinkapikey
 *kaggle.json*
 .ipynb_checkpoints/
+*.zip
+*.csv
+*api_key.py*

@@ -1,8 +1,14 @@
 ## Terminologies
   - ### makimaki
     - CAPM
+      - TBD
     - Black-Scholes
+      - TBD
     - binomial tree pricing
+      - TBD
+    - #### crypto
+      - spot : 現物 (spot trade : 現物取引)
+      - future : 先物 (空売りや、レバレッジをかけられる)
   - ### Ral
     - SAA (Strategic Asset Allocation)
       - Strategic asset allocation is a portfolio strategy. The investor sets target allocations for various asset classes and rebalances the portfolio periodically. The portfolio is rebalanced to the original allocations when they deviate significantly from the initial settings due to differing returns from the various assets. [source](https://www.investopedia.com/terms/s/strategicassetallocation.asp)  
