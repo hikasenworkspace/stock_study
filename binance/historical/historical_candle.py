@@ -93,7 +93,6 @@ class hist_candle():
                     current_date = convert_to_date_object(date_)
                     if current_date >= self.start_date and current_date <= self.end_date:
                         path = get_path(self.tt, "klines", "daily", symbol, interval)
-                        file_name = "{}-{}-{}.zip".format(symbol.upper(), interval, date_)
                         ext_file_name = "{}-{}-{}.csv".format(symbol.upper(), interval, date_)
                         if self.folder:
                             path = os.path.join(self.folder, path)

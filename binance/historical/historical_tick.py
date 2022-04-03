@@ -79,22 +79,18 @@ class hist_tick():
         columns_name = ["ID", "price", "qty", "quoteQty", "time", "isBuyerMaker", "isBestMatch"]
         dataframes = {}
         self.download_daily(extract = True, printout=False)
-        current = 0
         date_range = None
         for symbol in self.symbols:
             for date_ in self.dates:
                 current_date = convert_to_date_object(date_)
                 if current_date >= self.start_date and current_date <= self.end_date:
                     path = get_path(self.tt, "trades", "daily", symbol)
-                    file_name = "{}-trades-{}.zip".format(symbol.upper(), date_)
                     ext_file_name = "{}-trades-{}.csv".format(symbol.upper(), date_)
-                    download_path = "{}{}".format(path, file_name)
                     if self.folder:
                         path = os.path.join(self.folder, path)
                     if date_range:
                         date_range = date_range.replace(" ","_")
                         path = os.path.join(path, date_range)
-                    save_path = get_destination_dir(os.path.join(path, file_name), None)
                     csv_save_path = get_destination_dir(os.path.join(path, ext_file_name), None)
             df = pd.read_csv(csv_save_path, names=columns_name, index_col='time')
             df.index = pd.to_datetime(df.index / 1e3, unit='s')
