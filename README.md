@@ -57,8 +57,9 @@
 
 
 ## 議事録
-- [02/19/2022](02192022.md)
-- [02/25/2022](02252022.md)
+- [02/19/2022](Documents/02192022.md)
+- [02/25/2022](Documents/02252022.md)
+- [04/08/2022](Documents/04082022.md)
 
 
 ## environment preparation
@@ -76,7 +77,11 @@
 - run `docker exec -it <container_name> bash` to enter interactive shell
 
 - `<container_name>` can be checked through `docker ps -n <n>`, where it shows `<n>` last created containers.
+- If there is an error message like `#11 3.230 E: Release file for http://security.ubuntu.com/ubuntu/dists/focal-security/InRelease is not valid yet (invalid for another 8h 2min 42s). Updates for this repository will not be applied.`, need to run `wsl --shutdown` on powershell then restart docker-desktop.
 
+- #### How to install docker on windows ?
+  - Install wsl2 (Follow thi [instruction](https://docs.microsoft.com/ja-jp/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package))
+  - Then, install Docker Desktop 
 ### python
 
 - change directory to `.devcontainer` by
