@@ -1,3 +1,6 @@
 [submodule "kaggle"]
 	path = kaggle
 	url = git@github.com:hikasenworkspace/kaggle.git
+[submodule "blockchain/blockchain_examples"]
+	path = blockchain/blockchain_examples
+	url = git@github.com:dvf/blockchain.git
