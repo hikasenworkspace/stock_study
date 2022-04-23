@@ -4,3 +4,9 @@
 [submodule "blockchain/blockchain_examples"]
 	path = blockchain/blockchain_examples
 	url = git@github.com:dvf/blockchain.git
+[submodule "blockchain/study"]
+	path = blockchain/study
+	url = git@github.com:dvf/blockchain-book.git
+[submodule "blockchain/Hands-On-Blockchain-for-Python-Developers"]
+	path = blockchain/Hands-On-Blockchain-for-Python-Developers
+	url = git@github.com:PacktPublishing/Hands-On-Blockchain-for-Python-Developers.git
