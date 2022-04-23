@@ -51,5 +51,6 @@ RUN rm -rf environment.yml
 
 COPY ssh-agent-manage.sh /usr/local/bin/ssh-agent-manage.sh
 RUN mkdir -p ~/.config && touch ~/.config/ssh-agent.pid
-RUN echo "$(cat /usr/local/bin/ssh-agent-manage.sh)" >> ~/.bashrc
+# RUN echo "$(cat /usr/local/bin/ssh-agent-manage.sh)" >> ~/.bashrc
+RUN git config --global core.autocrlf input
 WORKDIR /home/user/stock_study
