@@ -20,7 +20,7 @@ services:
         target: /etc/gitconfig
         read_only: true
     ports:
-      - "8886:8888"
+      - "8885:8888"
     # cap_add: 
     #   - SYS_PTRACE
     privileged: true

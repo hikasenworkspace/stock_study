@@ -54,6 +54,50 @@
   
   - ethereum Wiki
     - https://github.com/ethereum/wiki/wiki/%5BJapanese%5D-White-Paper
+
+  - bitcoin script
+    - https://academy.binance.com/ja/articles/an-introduction-to-bitcoin-script
+  - ### attacks
+    - #### Transaction Malleability
+      - https://qiita.com/nagmnt/items/81e7166e6ecdf2224665 は手を動かして理解できる
+        -~~変更するのは、scriptsig なのでは？~~ 普通にscripsigを変更していました。
+      - これを行うためには秘密鍵が必要？
+        - 必要ない。scriptSigは、典型的には`<sig> <pubKey>`の形をとっているが、この`<sig>`は、scriptSigを除くトランザクションのハッシから生成される。生成にprivatekeyが必要。しかしながら、ScriptSigの変更は`<sig>`を変更する以外でも変更可能。例えば` OP_NOP <sig> <pubKey>`とするなど。
+      - この変更を加えて再送信することで同じ内容の別のTXIDを持ったトランザクションがブロードキャストされ、それがブロックに入ってしまえば変更不可能
+      - 仮に送信者が全てをTXIDで管理していたとすると、あたかも送ったトランザクションが何らかの理由で承認されなかったと勘違いされる。
+      - **SegWit**によって解決可能
+
+  - ### Bitcoin address
+
+  - 二者間取引(ペイメントチャネル)
+    - MultiSigを用いる
+      - 複数の署名がないと使えないトランザクション？アカウント？
+      -m 個の秘密鍵の内，n 個の秘密鍵を使用することで UTXO をアンロックするようなマルチシグネチャのことを m-of-n マルチシグと呼ぶ．今回は2-of-2まるちしぐを使用
+    1. Funding Transactionを作る
+    2. Refund Transactionを作る
+    3. AからBにFunding Transactionを送り、署名してブロックチェーンに記録する.
+
+  - ### Ethereum
+    - Ethereum アカウント
+      - nonce 、各トランザクションの処理が一度きりであることを確約するためのカウンター
+      - アカウントの現在の ether balance
+      - アカウントの contract code （もし存在すれば）
+      - アカウントの storage （デフォルトは空）
+
+      Ether はトランザクション手数料を支払うために使用されます。 一般的に、アカウントには二つの種類があります。 秘密鍵により管理される EOA (externally owned accounts) と自身のコントラクトコードにより管理される contract (contract account) です。 EOA はコードを持たず、EOA からトランザクションを生成し署名することによって メッセージ を送ることができます。contract では、メッセージを受信した時はいつも保持コードをアクティベートし、内部ストレージを読み書き可能にし、メッセージを送信するもしくは新しいコントラクトを作る、といった内容のことが順番に実行されます。
+      ここで言うコントラクトとは、特定のコードを実行し、自身の ether 残高と、なんども使う変数を把握するのに必要な key/value ストレージ を直接管理する権限を持っている、ということに注意してください。
+
+    - メッセージ と トランザクション
+
+
+      
+  - ### Smart Contract
+    - 
+
+  - ## 発表
+    - 
+  
+
       
 
 
