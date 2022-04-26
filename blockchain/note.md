@@ -136,13 +136,16 @@
       - And all peers will be audited by the peers 
 
     - ### Distribute ledger across Peers
-      - さとしの提案したモデルは、これまでの全ての台帳を全ピアーで共有すると言うもの。
+      - さとしの提案したモデルは、これまでの全ての台帳を全ピアーで共有し、完全に分権でかつ、permisson lessなもの。
       - ここで言う全ての台帳とは、全peerの台帳となる。
       - Thus, new node downloads the entire ledger history.
-        - When I tried to join the node, it take a day to download all history.
-        - 
+        - Actually, when I tried to join the node, it take a day to download all history.
+      - This models are strong again the many risks such as data loss, data coruption, and tampering.
 
-
+    - ### Definition of the coin
+      - 今から、どのような仕組みなのかを確認する。
+      - さとしは、ビットコインを、トランザクションの連鎖として定義した。
+      - 100コイン使うためには、以前に別の人から100コイン以上のコインを受け取ってなければならない。
   
 
       
