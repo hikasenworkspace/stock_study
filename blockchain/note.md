@@ -78,6 +78,7 @@
     3. AからBにFunding Transactionを送り、署名してブロックチェーンに記録する.
 
   - ### Ethereum
+    - https://qiita.com/kagami-r0927/items/d73492e3a9207c8345dc がめっちゃわかりやすい。
     - Ethereum アカウント
       - nonce 、各トランザクションの処理が一度きりであることを確約するためのカウンター
       - アカウントの現在の ether balance
@@ -95,7 +96,53 @@
     - 
 
   - ## 発表
-    - 
+    ### - 電子コインの問題点
+      - Tampering(改ざん)
+        ハッキングして残高を変更する
+      - コインの偽造
+        自信でvalid-lookingな電子コインを発行し、それを他人に渡す。相手が間違いに気が付かなければ、そのまま取引が成立し、商品を受け取れる。
+        相手は、いざ電子コインを使おうとした時にわかる。これは実際の現金での偽造と同じ仕組み
+      - 多重使用
+        電子コインというなの電子情報ならではの概念。同じコインを別々の人に支払うこと。
+      - 支払い証明
+        取引を行なった証明を誰が行うか？
+    - ### TTPが存在する場合の問題点の解決法。
+      - TTPが存在する場合、取引は右の図のようになる。
+        - アリスが電子コインを銀行から引き出す。（現金と同等の価値）
+        - アリスはボブに電子コインを支払う
+        - ボブは銀行に受け取った電子コインを預けることで、残高が増える。
+      - もし銀行がこの取引の過程全てを管理していれば、二重支払いは起こり得ない。
+      - 銀行のセキュリティ対策が十分であれば、データの改竄は怒らない
+    - ### 電子署名を用いた偽造対策
+      - １万円札にはいくつもの仕掛けが施されていて、そのどれもが国立印刷局によって発行されていることを証明している
+      - 電子コインの場合は、電子署名を電子コインに添付することで、この電子コインを発行した組織が、 銀行（TTP）であることを証明できる。
+
+    - ### TTPを利用する問題点
+      - New Trusted Third Parties are Costly and Risky
+      - Existing Trusted Third Parties are Valuable
+        - Almost all people blindly trusting  Companies like Visa, Dun and Bradstreet, Underwriter's Laboratories.
+        - Of course, I use visa but I didn't care about their credibility.
+        - Even though these organizations often have many flaws and weaknesses, these institutions are with us for a long time. 
+      - Personal Property Has Not and Should Not Depend On TTPs
+        - we should store our personal properties by ourselves. 
+      - Cost of transaction 
+        - for example, we pay fee for international transaction. and another example is the Cost when restaurant try to import the credit card payment.
+      - Risk of server down. 
+        - TTP need to ensure that server never down or in an unstable state during the deployment process.
+        - This is called zero-downtime.
+    - ### develop decentralized system
+      - 中心的なアイデアは、全ての権力と情報を中央に集めるのではなく、peer to peerで管理するシステム。
+      - このシステムは、クライアント(nodeあるいわpeer)は誰も信用しない。が、このシステムのことは信用する。
+      - And all peers will be audited by the peers 
+
+    - ### Distribute ledger across Peers
+      - さとしの提案したモデルは、これまでの全ての台帳を全ピアーで共有すると言うもの。
+      - ここで言う全ての台帳とは、全peerの台帳となる。
+      - Thus, new node downloads the entire ledger history.
+        - When I tried to join the node, it take a day to download all history.
+        - 
+
+
   
 
       
