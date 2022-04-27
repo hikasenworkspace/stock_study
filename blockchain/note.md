@@ -96,6 +96,13 @@
     - 
 
   - ## 発表
+    ### - introduction
+      - what I'd like to talk is the blockchain algorithm in the quantum era.
+      - There is two types of them.
+        - One is use classical algorithm strong to quantum computer
+        - the other is use quantum protocol inside blockchain algorithm
+      - In either case, I need to talk about what is blockchain, so in this luch meeting, Im gonna give a presentation about blockchain
+      - therefore, the listner who already know about blockchain, this talk is nothing but summary of blockchain, and give me comments if you find mistake or something.
     ### - 電子コインの問題点
       - Tampering(改ざん)
         ハッキングして残高を変更する
@@ -106,6 +113,17 @@
         電子コインというなの電子情報ならではの概念。同じコインを別々の人に支払うこと。
       - 支払い証明
         取引を行なった証明を誰が行うか？
+
+
+      - Tampering
+        Hacking to change the balance
+      - Token Forgery
+        Issuing a valid-looking electronic coin and handing them to others. If the payee or receiver does not notice it, the transaction goes through as is and will submit the products or merchandices.
+        The other party will know when it is time to use the electronic coin. This is the same mechanism as counterfeiting with actual cash
+      - Multiple spending
+        This is a concept unique to electronic coin. It just paying the same coin to different payee.
+      - Proof of Payment
+        Who prooves that the transaction actually took place?
     - ### TTPが存在する場合の問題点の解決法。
       - TTPが存在する場合、取引は右の図のようになる。
         - アリスが電子コインを銀行から引き出す。（現金と同等の価値）
@@ -113,9 +131,22 @@
         - ボブは銀行に受け取った電子コインを預けることで、残高が増える。
       - もし銀行がこの取引の過程全てを管理していれば、二重支払いは起こり得ない。
       - 銀行のセキュリティ対策が十分であれば、データの改竄は怒らない
+
+      - If we have a TTP, the transaction would look like the figure on the right side.
+        - Alice withdraws electronic coins from the bank. (It has the same value as cash)
+        - Alice pay Bob the electronic coins.
+        - Bob deposits the received electronic coins in the bank, and increasing his balance.
+      - If the bank controls this entire transaction process, double payments cannot occur.
+      - If the bank's security are sufficient, data tampering will not occur. 
+
     - ### 電子署名を用いた偽造対策
       - １万円札にはいくつもの仕掛けが施されていて、そのどれもが国立印刷局によって発行されていることを証明している
       - 電子コインの場合は、電子署名を電子コインに添付することで、この電子コインを発行した組織が、 銀行（TTP）であることを証明できる。
+
+     prevent token forgery using electronic signatures
+      - The 10,000 yen bill has a number of tricks, all of which prove that it was issued by the National Printing Bureau
+      - electronic coin does the similar way.
+      - they create an electronic signature and attached to an electronic coin to prove  the organization that issued this electronic coin is the bank (TTP).
 
     - ### TTPを利用する問題点
       - New Trusted Third Parties are Costly and Risky
@@ -131,21 +162,57 @@
         - TTP need to ensure that server never down or in an unstable state during the deployment process.
         - This is called zero-downtime.
     - ### develop decentralized system
-      - 中心的なアイデアは、全ての権力と情報を中央に集めるのではなく、peer to peerで管理するシステム。
-      - このシステムは、クライアント(nodeあるいわpeer)は誰も信用しない。が、このシステムのことは信用する。
+      - The central idea is a system in which all power and information is managed peer to peer, rather than centralized.
+      - In this system, the client (the node, or peer) does not trust anyone, but trusts the system. 
       - And all peers will be audited by the peers 
+      
 
     - ### Distribute ledger across Peers
-      - さとしの提案したモデルは、これまでの全ての台帳を全ピアーで共有し、完全に分権でかつ、permisson lessなもの。
-      - ここで言う全ての台帳とは、全peerの台帳となる。
-      - Thus, new node downloads the entire ledger history.
+      - The model proposed by Satoshi is completely decentralized and permisson less, with all peers sharing all the ledgers.
+      - All ledgers here are the ledgers of all PEERs.
+      - Thus, new node come into place, they download the entire ledger history.
         - Actually, when I tried to join the node, it take a day to download all history.
-      - This models are strong again the many risks such as data loss, data coruption, and tampering.
+      - This models are strong against the many risks such as data loss, data coruption, and tampering.
 
     - ### Definition of the coin
-      - 今から、どのような仕組みなのかを確認する。
-      - さとしは、ビットコインを、トランザクションの連鎖として定義した。
-      - 100コイン使うためには、以前に別の人から100コイン以上のコインを受け取ってなければならない。
+      - Let's consider the case where 0.0001 BTC is sent from alice to bob
+      - In order to pay a 0.0001 Bitcoin, alice need to gather around the old transaction, where sum of output value should be more than 0.0001 bitcoin.
+    - ### Transaction
+      - Here's the process of transaction
+      - Bitcoin is tied to their publik keys.
+
+    - ### Multiple spending
+      - what attackers trying to do is create create another chain on purpose in order to modify or cancel a transaction.
+      For example, create new chain that not contain the transaction they made, after receiving the products or merchandices. 
+
+      - unlike TTP model, this model cannot prevent this.
+
+    - ### Network consensus
+      - As discussed in the last 2 slides, if we can somehow agree to one chain, Distributed ledger is robust
+      - So we need consensus algorithm to agree which chain it the proper, among the network. 
+      - There are many algorithm such as 
+    - ### Majority votes and Sybil attack
+      - really simple, each node can vote for the proper cahin. and make a consensus that the chain got majority votes will be the proper chain.
+      - Of course, this algorithm break down if attacker can increase number of pseudonymous identities at will. 
+      - we can freely create new nodes, attackers can append many nodes as much as they want and influence on the outcome of an agreement.
+ 
+    - ### Proof of work
+      - The idea bitcoin adopting is proof of work.
+      - In this algorithm, each nodes try to solver problem before broadcasting the block they arange, and node who solve it can obtain initiatives. This is called mining.
+      - Difficulty of problem will be adjusted according to the computational power of the network.
+    
+    - ### Proof of work2
+      - Let's look at the problem more concretely.
+      - miners try to serach for a valid value called "nonce". nonce is adjusted by miners until the hash of the block is less than or equal to the current target difficulty of the block.
+
+    - ### Forks and consensus chain
+      - There is still the chance that form may happens when two or more valid blocks refer to the same parent. like the figure on the right side.
+      - In this case we select the branch with the longest chain.
+      - with this setting, we could construct consensus algorithm. 
+    
+
+
+
   
 
       
